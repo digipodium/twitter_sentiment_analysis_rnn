@@ -37,7 +37,7 @@ def save_tweet(text,sentiment):
     try:
         db = opendb()
         idx = sentiment.argmax()
-        st.write(text,sentiment,sentiment.argmax(),idx)
+        # st.write(text,sentiment,sentiment.argmax(),idx)
         if idx == 1:
             tweet = Tweet(text=text,prediction="🥳 positive 🥳",pos=sentiment[1],neg=sentiment[0],neu=sentiment[2])
         elif idx == 0:
@@ -169,4 +169,11 @@ if choice =='View Data Visualization':
 if choice == 'About project team':
     st.image('images/1.png', use_column_width=True)
     st.header("About us")
-    pass
+    c1,c2= st.beta_columns(2)
+    st.subheader("Team Members")
+    c1.success("Pushkar dubey")
+    # c1.image('images/pushkar.jpg')
+    c2.success("Karina Singh")
+    c1.success("Ritu Verma")
+    c2.success("Priyanka verma")
+    c1.success("Shivani Awasthi")
